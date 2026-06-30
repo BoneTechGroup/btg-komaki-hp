@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""キャラ画像の背景(黒・グレー・白・市松模様など無彩色)を外周から透過化。
-キャラ外周の輪郭(濃い線や肌色)でフラッドフィルが止まり、内部は保護される。
-キャラ周囲の白いステッカー縁取りは無彩色なので一緒に除去される(=縁なしの切り抜き)。"""
+"""生成画像(暗い背景)を外周フラッドフィルで透過化。
+キャラ周囲の明るい白フチがバリアになり内部(紺スクラブ等の暗部)は保護される。
+※ Geminiは参考画像の背景に関わらず暗背景で出力するため、暗背景除去で統一できる。"""
 import sys, os
 from pathlib import Path
 from collections import deque
@@ -9,11 +9,10 @@ from PIL import Image
 
 sys.stdout.reconfigure(encoding="utf-8")
 GEN = Path(__file__).parent.parent / "assets" / "characters" / "generated"
-SAT_MAX = 28   # 彩度(max-min)がこれ以下=無彩色(背景候補)
+THRESH = 100  # 明るさ(最大チャンネル)がこれ未満=暗背景候補
 
-def is_bg(px):
-    r, g, b = px[0], px[1], px[2]
-    return (max(r, g, b) - min(r, g, b)) <= SAT_MAX
+def dark(px):
+    return max(px[0], px[1], px[2]) < THRESH
 
 def knockout(path):
     img = Image.open(path).convert("RGBA")
@@ -23,11 +22,11 @@ def knockout(path):
     q = deque()
     for x in range(w):
         for y in (0, h-1):
-            if px[x, y][3] != 0 and is_bg(px[x, y]) and not seen[y][x]:
+            if dark(px[x, y]) and not seen[y][x]:
                 seen[y][x] = True; q.append((x, y))
     for y in range(h):
         for x in (0, w-1):
-            if px[x, y][3] != 0 and is_bg(px[x, y]) and not seen[y][x]:
+            if dark(px[x, y]) and not seen[y][x]:
                 seen[y][x] = True; q.append((x, y))
     while q:
         x, y = q.popleft()
@@ -35,10 +34,9 @@ def knockout(path):
         px[x, y] = (r, g, b, 0)
         for dx, dy in ((1,0),(-1,0),(0,1),(0,-1)):
             nx, ny = x+dx, y+dy
-            if 0 <= nx < w and 0 <= ny < h and not seen[ny][nx] and px[nx, ny][3] != 0 and is_bg(px[nx, ny]):
+            if 0 <= nx < w and 0 <= ny < h and not seen[ny][nx] and dark(px[nx, ny]):
                 seen[ny][nx] = True; q.append((nx, ny))
     img.save(path)
-    # 透過率
     trans = sum(1 for yy in range(0, h, 9) for xx in range(0, w, 9) if px[xx, yy][3] == 0)
     tot = len(range(0, h, 9)) * len(range(0, w, 9))
     return img.size, round(trans/tot, 2)
