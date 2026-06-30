@@ -77,11 +77,23 @@ def gen(src_name, pose, out_name):
     print(f"  失敗: {src_name} -> {out_name}")
     return False
 
-# ── テスト生成タスク ─────────────────────────────────────
+# ── 生成タスク ───────────────────────────────────────────
 TASKS = [
-    ("reception.png", "右手で横（画面の右方向）を指さして、こちらへどうぞと笑顔で案内するポーズ。", "reception_guide.png"),
-    ("iwai.png", "右手の親指を立てて『おまかせください』とニッコリ自信のあるOKポーズ。", "iwai_thumbsup.png"),
-    ("natsumi.png", "片手で首の後ろを押さえ、痛くて困った表情(眉を下げる)。むちうちで悩む患者の様子。", "natsumi_neckpain.png"),
+    # 受付・案内役
+    ("reception.png", "両手を体の前で揃えて深くお辞儀している。にこやかな笑顔。お出迎えの挨拶。", "reception_bow.png"),
+    ("reception.png", "片手で電話の受話器を耳に当て、もう片方の手で予約を受け付ける笑顔のポーズ。", "reception_phone.png"),
+    # 患者・なつみさん
+    ("natsumi.png", "両手の指先を頬に添えて不安そうに眉を下げた表情。事故後の不安や悩みを表す。", "natsumi_worry.png"),
+    ("natsumi.png", "両手を胸の前で合わせ、目を細めて嬉しそう・安心した満面の笑顔。治療後の喜び。", "natsumi_happy.png"),
+    # 岩井さん（眼鏡なし）
+    ("iwai.png", "片手の手のひらを上に向けて差し出し、明るく説明・案内するポーズ。笑顔。", "iwai_explain.png"),
+    ("iwai.png", "両手を体の前で揃えて丁寧にお辞儀している。誠実な笑顔。", "iwai_bow.png"),
+    # 村瀬さん（丸眼鏡）
+    ("murase.png", "人差し指を立ててポイントを解説するポーズ。優しい穏やかな笑顔。", "murase_point.png"),
+    ("murase.png", "右手の親指を立てて『おまかせください』の自信あるOKポーズ。穏やかな笑顔。", "murase_thumbsup.png"),
+    # 他店舗スタッフ
+    ("staff1.png", "片手を上げて元気に手を振って挨拶しているポーズ。明るい笑顔。", "staff1_wave.png"),
+    ("staff2.png", "片手の手のひらを上に向けて差し出し、こちらへどうぞと案内するポーズ。笑顔。", "staff2_guide.png"),
 ]
 
 if __name__ == "__main__":
