@@ -208,6 +208,29 @@ header{
 .scard p{font-size:.86rem;color:var(--ink-soft)}
 
 /* ===================================================================
+   院の雰囲気 ギャラリー
+   =================================================================== */
+.gallery{padding:84px 0}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gallery-grid figure{
+  position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm);
+  aspect-ratio:4/3;cursor:pointer;background:#dfeeec
+}
+.gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.gallery-grid figure:hover img{transform:scale(1.08)}
+.gallery-grid figcaption{
+  position:absolute;left:0;right:0;bottom:0;color:#fff;font-weight:800;font-size:.86rem;
+  padding:26px 14px 12px;background:linear-gradient(transparent,rgba(8,80,78,.82));
+}
+.gallery-grid figure.wide{grid-column:span 2}
+/* ライトボックス */
+.lightbox{position:fixed;inset:0;z-index:300;background:rgba(8,30,29,.92);display:none;
+  align-items:center;justify-content:center;padding:30px;cursor:zoom-out}
+.lightbox.show{display:flex}
+.lightbox img{max-width:92vw;max-height:88vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lightbox .lb-close{position:absolute;top:20px;right:28px;font-size:2.2rem;color:#fff;background:none;border:none;cursor:pointer}
+
+/* ===================================================================
    料金/慰謝料
    =================================================================== */
 .fee{padding:84px 0}

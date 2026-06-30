@@ -11,6 +11,16 @@ document.querySelectorAll('.faq-q').forEach(q => {
   q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
 });
 
+// ===== ギャラリー ライトボックス =====
+const lb = document.getElementById('lightbox');
+if (lb) {
+  const lbImg = lb.querySelector('img');
+  document.querySelectorAll('.gallery-grid figure img').forEach(img => {
+    img.addEventListener('click', () => { lbImg.src = img.src; lbImg.alt = img.alt; lb.classList.add('show'); });
+  });
+  lb.addEventListener('click', () => lb.classList.remove('show'));
+}
+
 // ===== モバイルメニュー =====
 const mnav = document.getElementById('mnav');
 document.getElementById('burger')?.addEventListener('click', () => mnav.classList.add('show'));
