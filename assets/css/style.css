@@ -323,7 +323,7 @@ footer .copy{margin-top:24px;opacity:.6;font-size:.8rem}
   .sim-body{padding:22px}
 }
 /* モバイルメニュー */
-.mobile-nav{display:none;position:fixed;inset:0;z-index:210;background:rgba(15,43,42,.97);
+.mobile-nav{display:flex;position:fixed;inset:0;z-index:210;background:rgba(15,43,42,.97);
   flex-direction:column;align-items:center;justify-content:center;gap:22px;opacity:0;pointer-events:none;transition:opacity .3s}
 .mobile-nav.show{opacity:1;pointer-events:auto}
 .mobile-nav a{color:#fff;font-size:1.15rem;font-weight:800}
