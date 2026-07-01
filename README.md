@@ -7,6 +7,14 @@ BTG接骨院 小牧院の交通事故・むち打ち専門サイト。
 
 ---
 
+## 🌐 公開URL（GitHub Pages・noindex中）
+
+**https://bonetechgroup.github.io/btg-komaki-hp/**
+
+- `main` に push すると1〜2分で自動反映される。
+- 確認・共有用のため `noindex,nofollow`＋robots.txt で検索よけ済み。独自ドメイン取得後に解除する。
+- 無料公開のためリポジトリは**public**（ソース公開）。ソースを隠したい場合はCloudflare Pagesへ移行可。
+
 ## 🏠 家のPCで続きを始める手順
 
 ```bash
