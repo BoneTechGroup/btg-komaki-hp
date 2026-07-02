@@ -34,6 +34,14 @@ document.getElementById('burger')?.addEventListener('click', () => mnav.classLis
 document.getElementById('mclose')?.addEventListener('click', () => mnav.classList.remove('show'));
 mnav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mnav.classList.remove('show')));
 
+// ===== トップへ戻るボタン =====
+const totop = document.getElementById('totop');
+if (totop) {
+  const toggleTop = () => totop.classList.toggle('show', window.scrollY > 600);
+  document.addEventListener('scroll', toggleTop, { passive: true }); toggleTop();
+  totop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
 // ===== 慰謝料 計算シミュレーター =====
 (() => {
   const total = document.getElementById('simTotal');
