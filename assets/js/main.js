@@ -64,10 +64,10 @@ mnav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mnav.
   function calc() {
     let t = Math.max(1, Math.min(180, +total.value || 1));
     let v = Math.max(1, Math.min(120, +visit.value || 1));
-    // 対象日数 = min(実通院日数×2, 総治療日数)
+    // 対象日数 = min(実通院日数×2, 通院期間の日数)
     const target = Math.min(v * 2, t);
     const yen = target * DAILY;
-    calcEl.innerHTML = `4,300円 × <b>${fmt(target)}日</b>（実通院${v}日×2=${fmt(v*2)}日 と 総治療${t}日 の少ない方）`;
+    calcEl.innerHTML = `4,300円 × <b>${fmt(target)}日</b>（実通院${v}日×2=${fmt(v*2)}日 と 通院期間${t}日 の少ない方）`;
     animateTo(yen);
   }
   // レンジと数値入力の同期
