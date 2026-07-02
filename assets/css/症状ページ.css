@@ -1,0 +1,131 @@
+/* ===================================================================
+   BTG接骨院 小牧院 — 症状別ページ専用スタイル
+   style.css を読み込んだ上で追加適用する
+   =================================================================== */
+
+/* ---- パンくず ---- */
+.breadcrumb{max-width:var(--maxw);margin:0 auto;padding:14px 22px 0;font-size:.78rem;color:var(--ink-soft)}
+.breadcrumb a{color:var(--tiffany-deep);font-weight:700}
+.breadcrumb span::before{content:"›";margin:0 8px;color:#b9cfcd}
+
+/* ---- 症状ページ ヒーロー ---- */
+.sym-hero{padding:46px 0 66px;background:
+  radial-gradient(1000px 500px at 85% -10%, rgba(129,216,208,.35), transparent 60%),
+  linear-gradient(160deg,#fff 0%,var(--tiffany-pale) 100%)}
+.sym-hero .inner{display:grid;grid-template-columns:110px 1fr;gap:26px;align-items:center}
+.sym-icon{width:110px;height:110px;border-radius:28px;background:#fff;box-shadow:var(--shadow-sm);
+  display:flex;align-items:center;justify-content:center;border:2px solid var(--tiffany-pale)}
+.sym-icon svg{width:74px;height:74px}
+.sym-icon img{width:92px;height:92px;object-fit:contain}
+.sym-hero .tag{display:inline-block;background:var(--tiffany);color:#fff;font-weight:800;font-size:.72rem;
+  padding:4px 14px;border-radius:999px;letter-spacing:.08em;margin-bottom:10px}
+.sym-hero h1{font-size:clamp(1.5rem,4vw,2.3rem);font-weight:900;line-height:1.35}
+.sym-hero h1 .hl{color:var(--tiffany-deep);background:linear-gradient(transparent 62%,var(--gold) 62%)}
+.sym-hero .lead{margin-top:12px;color:var(--ink-soft);font-size:.95rem}
+.sym-hero .trust-row{margin-top:16px}
+.sym-hero .hero-cta{margin-top:20px}
+
+/* ---- こんな症状チェック ---- */
+.check-band{padding:70px 0}
+.check-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow-sm);border:1px solid #eef6f5;
+  padding:34px 34px 30px;max-width:860px;margin:0 auto}
+.checklist{list-style:none}
+.checklist li{position:relative;padding:12px 6px 12px 42px;border-bottom:1px dashed #d8ecea;font-weight:600}
+.checklist li:last-child{border-bottom:none}
+.checklist li::before{content:"✓";position:absolute;left:6px;top:50%;transform:translateY(-50%);
+  width:26px;height:26px;border-radius:8px;background:var(--tiffany);color:#fff;font-weight:900;
+  display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.checklist b{color:var(--accent-deep)}
+.check-note{margin-top:18px;text-align:center;font-weight:800;color:var(--tiffany-deep)}
+
+/* ---- 原因カード ---- */
+.cause{padding:70px 0;background:#fff}
+.cause-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.ccard{background:var(--mint);border-radius:18px;padding:24px 22px;border:1px solid #e3f3f1;
+  transition:transform .25s,box-shadow .25s}
+.ccard:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm)}
+.ccard .cnum{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
+  border-radius:10px;background:var(--tiffany);color:#fff;font-weight:900;margin-bottom:10px}
+.ccard h3{font-size:1rem;font-weight:900;margin-bottom:6px;color:var(--ink)}
+.ccard p{font-size:.86rem;color:var(--ink-soft)}
+
+/* ---- 本文中の写真 ---- */
+.sym-photo{margin:34px auto 0;max-width:760px}
+.sym-photo img{width:100%;border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+.sym-photo figcaption{text-align:center;font-size:.78rem;color:var(--ink-soft);margin-top:8px}
+
+/* ---- 医療機関への注意ボックス ---- */
+.md-note{max-width:860px;margin:34px auto 0;background:#fff7ef;border:1.5px solid #ffd9be;border-radius:16px;
+  padding:18px 22px;font-size:.86rem}
+.md-note b{color:var(--accent-deep)}
+.md-note .ttl{display:flex;align-items:center;gap:8px;font-weight:900;color:var(--accent-deep);margin-bottom:6px}
+
+/* ---- 当院でのケア ---- */
+.care{padding:70px 0}
+.care-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:980px;margin:0 auto}
+.cstep{background:#fff;border-radius:20px;box-shadow:var(--shadow-sm);border:1px solid #eef6f5;
+  padding:24px 20px;text-align:center;position:relative}
+.cstep .no{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);
+  color:#fff;font-weight:900;font-size:.72rem;padding:4px 16px;border-radius:999px;letter-spacing:.06em}
+.cstep .fig{height:130px;display:flex;align-items:center;justify-content:center;margin:10px 0 6px}
+.cstep .fig img{max-height:130px;object-fit:contain}
+.cstep h3{font-size:.98rem;font-weight:900;margin-bottom:6px}
+.cstep p{font-size:.84rem;color:var(--ink-soft);text-align:left}
+
+/* ---- 安心ポイント帯 ---- */
+.points-band{padding:60px 0;background:linear-gradient(135deg,var(--tiffany-deep),var(--tiffany))}
+.points-band .sec-head h2,.points-band .sec-head .en{color:#fff}
+.points-list{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:900px;margin:0 auto}
+.points-list .pt{background:rgba(255,255,255,.94);border-radius:999px;padding:10px 20px;font-weight:800;
+  font-size:.86rem;color:var(--tiffany-dark);box-shadow:0 4px 14px rgba(0,0,0,.08)}
+.points-list .pt em{font-style:normal;color:var(--accent-deep)}
+
+/* ---- 通院の流れ（ミニ） ---- */
+.flow-mini{padding:70px 0;background:#fff}
+.flow-mini ol{list-style:none;max-width:760px;margin:0 auto;counter-reset:fm}
+.flow-mini li{counter-increment:fm;position:relative;padding:18px 20px 18px 74px;background:var(--mint);
+  border:1px solid #e3f3f1;border-radius:16px;margin-bottom:14px}
+.flow-mini li::before{content:counter(fm);position:absolute;left:20px;top:50%;transform:translateY(-50%);
+  width:38px;height:38px;border-radius:50%;background:var(--tiffany);color:#fff;font-weight:900;
+  display:flex;align-items:center;justify-content:center;font-size:1.05rem}
+.flow-mini h3{font-size:.95rem;font-weight:900}
+.flow-mini p{font-size:.84rem;color:var(--ink-soft)}
+
+/* ---- まとめ ---- */
+.summary-box{max-width:860px;margin:0 auto;background:#fff;border-radius:var(--radius);
+  border:2px solid var(--tiffany-light);box-shadow:var(--shadow-sm);padding:34px 34px 30px}
+.summary-box h2{font-size:1.2rem;font-weight:900;color:var(--tiffany-deep);margin-bottom:12px}
+.summary-box p{font-size:.92rem;margin-bottom:10px}
+
+/* ---- 他の症状メニュー ---- */
+.sym-menu{padding:70px 0}
+.sym-menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:900px;margin:0 auto}
+.smitem{display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid #e3f3f1;border-radius:16px;
+  padding:14px 16px;font-weight:800;font-size:.9rem;transition:transform .22s,box-shadow .22s,border-color .22s}
+.smitem:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm);border-color:var(--tiffany)}
+.smitem .ic{width:48px;height:48px;flex:0 0 48px;border-radius:12px;background:#fff;
+  border:1px solid var(--tiffany-pale);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.smitem .ic svg{width:30px;height:30px}
+.smitem .ic img{width:44px;height:44px;object-fit:contain}
+.smitem.current{border-color:var(--tiffany);background:var(--tiffany-pale);pointer-events:none}
+.smitem .arrow{margin-left:auto;color:var(--tiffany);font-weight:900}
+
+/* ---- 症状SVGアイコン共通 ---- */
+.sym-svg .st{fill:none;stroke:var(--tiffany-deep);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.sym-svg .fl{fill:var(--tiffany-light);opacity:.45}
+.sym-svg .ac{fill:none;stroke:var(--accent);stroke-width:2.4;stroke-linecap:round}
+
+/* ---- レスポンシブ ---- */
+@media (max-width:860px){
+  .care-steps{grid-template-columns:1fr}
+  .sym-menu-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .sym-hero .inner{grid-template-columns:72px 1fr;gap:14px}
+  .sym-icon{width:72px;height:72px;border-radius:18px}
+  .sym-icon svg{width:48px;height:48px}
+  .sym-icon img{width:60px;height:60px}
+  .check-card{padding:24px 18px}
+  .sym-menu-grid{grid-template-columns:1fr}
+  .breadcrumb{font-size:.7rem}
+}

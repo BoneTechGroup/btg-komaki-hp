@@ -14,6 +14,7 @@
 <meta property="og:locale" content="ja_JP">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/症状ページ.css">
 </head>
 <body>
 <div class="progress" id="progress"></div>
@@ -27,6 +28,7 @@
     </a>
     <nav class="hnav">
       <a class="navlink" href="#worry">こんなお悩み</a>
+      <a class="navlink" href="#symptoms">症状別ページ</a>
       <a class="navlink" href="#reasons">選ばれる理由</a>
       <a class="navlink" href="#flow">施術の流れ</a>
       <a class="navlink" href="#staff">スタッフ</a>
@@ -45,6 +47,7 @@
 <div class="mobile-nav" id="mnav">
   <button class="close" id="mclose" aria-label="閉じる">✕</button>
   <a href="#worry">こんなお悩み</a>
+  <a href="#symptoms">症状別ページ</a>
   <a href="#reasons">選ばれる理由</a>
   <a href="#flow">施術の流れ</a>
   <a href="#staff">スタッフ紹介</a>
@@ -84,8 +87,8 @@
     </div>
     <div class="hero-media">
       <div class="badge-0en"><span>自賠責で</span><b>0円</b><span>窓口負担</span></div>
-      <div class="hero-photo"><img src="assets/photos/scene-counseling.jpg" alt="小牧院での交通事故のカウンセリング風景"></div>
-      <img class="hero-char" src="assets/characters/generated/iwai2.png" alt="BTG接骨院 小牧院 スタッフ">
+      <div class="hero-photo"><img src="assets/写真/scene-counseling.jpg" alt="小牧院での交通事故のカウンセリング風景"></div>
+      <img class="hero-char" src="assets/イラスト/生成/iwai2.png" alt="BTG接骨院 小牧院 スタッフ">
     </div>
   </div>
   <div class="scroll-ind"><span class="m"></span>SCROLL</div>
@@ -107,7 +110,7 @@
     </div>
     <div class="worry-grid">
       <div class="worry-char reveal left">
-        <img src="assets/characters/generated/natumi2.png" alt="交通事故のことで悩む患者さん">
+        <img src="assets/イラスト/生成/natumi2.png" alt="交通事故のことで悩む患者さん">
       </div>
       <div>
         <div class="bubbles">
@@ -132,7 +135,29 @@
         <div class="big">窓口負担<em>0円</em></div>
         <p>交通事故によるケガの施術は<b>自賠責保険が適用</b>されるため、被害者の方の施術費用は原則<b>0円</b>。安心して必要な施術に専念いただけます。お見舞金制度（最大2万円）もご用意しています。</p>
       </div>
-      <img src="assets/characters/generated/iwai2.png" alt="費用について説明するスタッフ">
+      <img src="assets/イラスト/生成/iwai2.png" alt="費用について説明するスタッフ">
+    </div>
+  </div>
+</section>
+
+<!-- ============ 症状別ページ ============ -->
+<section class="sym-menu" id="symptoms" style="background:#fff">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">SYMPTOMS</span>
+      <h2>交通事故の<span class="hl">症状別ページ</span></h2>
+      <p>気になる症状をタップすると、原因とケアの流れを詳しくご覧いただけます。</p>
+    </div>
+    <div class="sym-menu-grid">
+      <a class="smitem reveal d1" href="症状/むちうち.html"><span class="ic"><img src="assets/イラスト/アイコン/首.png" alt="" loading="lazy"></span>首の痛み・むちうち<span class="arrow">›</span></a>
+      <a class="smitem reveal d1" href="症状/腰の痛み.html"><span class="ic"><img src="assets/イラスト/アイコン/腰.png" alt="" loading="lazy"></span>腰の痛み<span class="arrow">›</span></a>
+      <a class="smitem reveal d1" href="症状/肩の痛み.html"><span class="ic"><img src="assets/イラスト/アイコン/肩.png" alt="" loading="lazy"></span>肩の痛み<span class="arrow">›</span></a>
+      <a class="smitem reveal d2" href="症状/手首の痛み.html"><span class="ic"><img src="assets/イラスト/アイコン/手首.png" alt="" loading="lazy"></span>手首の痛み<span class="arrow">›</span></a>
+      <a class="smitem reveal d2" href="症状/膝の痛み.html"><span class="ic"><img src="assets/イラスト/アイコン/膝.png" alt="" loading="lazy"></span>膝の痛み<span class="arrow">›</span></a>
+      <a class="smitem reveal d2" href="症状/頭痛.html"><span class="ic"><img src="assets/イラスト/アイコン/頭痛.png" alt="" loading="lazy"></span>頭痛<span class="arrow">›</span></a>
+      <a class="smitem reveal d3" href="症状/シートベルト損傷.html"><span class="ic"><img src="assets/イラスト/アイコン/シートベルト.png" alt="" loading="lazy"></span>シートベルト損傷<span class="arrow">›</span></a>
+      <a class="smitem reveal d3" href="症状/胸の痛み.html"><span class="ic"><img src="assets/イラスト/アイコン/胸.png" alt="" loading="lazy"></span>胸の痛み<span class="arrow">›</span></a>
+      <a class="smitem reveal d3" href="症状/めまい.html"><span class="ic"><img src="assets/イラスト/アイコン/めまい.png" alt="" loading="lazy"></span>めまい<span class="arrow">›</span></a>
     </div>
   </div>
 </section>
@@ -168,7 +193,7 @@
         <div class="ricon"><svg viewBox="0 0 48 48"><rect class="ic-b" x="9" y="9" width="30" height="30" rx="8"/><path fill="#fff" d="M19 15h8a6 6 0 010 12h-4v6h-4zm4 4v4h4a2 2 0 000-4z"/></svg></div>
         <h3>駐車場5台あり</h3><p>院の前に駐車場を5台完備。お車での来院もスムーズです。</p></div>
       <div class="rcard cta-card reveal zoom d3">
-        <img src="assets/characters/generated/murase2.png" alt="おまかせください">
+        <img src="assets/イラスト/生成/murase2.png" alt="おまかせください">
         <p style="font-weight:800;color:var(--tiffany-deep)">まずはお気軽にご相談を</p>
       </div>
     </div>
@@ -184,11 +209,11 @@
       <p>はじめての方もご安心ください。スタッフがやさしくご案内します。</p>
     </div>
     <div class="fsteps">
-      <div class="fstep reveal d1"><span class="st">STEP 1</span><div class="fig"><img src="assets/characters/generated/uketuke4.png" alt="ご予約"></div><h4>ご予約</h4><p>LINE・お電話で。事故状況も気軽にご相談ください。</p></div>
-      <div class="fstep reveal d1"><span class="st">STEP 2</span><div class="fig"><img src="assets/characters/generated/flow-counseling.png" alt="受付・カウンセリング"></div><h4>受付・カウンセリング</h4><p>事故の状況やお体の状態を詳しくお伺いします。</p></div>
-      <div class="fstep reveal d2"><span class="st">STEP 3</span><div class="fig"><img src="assets/characters/generated/flow-kensa.png" alt="検査・説明"></div><h4>検査・説明</h4><p>痛みの原因を検査し、施術方針を分かりやすくご説明。</p></div>
-      <div class="fstep reveal d2"><span class="st">STEP 4</span><div class="fig"><img src="assets/characters/generated/flow-sejutsu.png" alt="施術"></div><h4>施術</h4><p>国家資格者がお一人おひとりに合わせて丁寧に施術。</p></div>
-      <div class="fstep reveal d3"><span class="st">STEP 5</span><div class="fig"><img src="assets/characters/generated/natumi1.png" alt="通院サポート"></div><h4>通院サポート</h4><p>保険会社への連絡や通院の不安もしっかりサポート。</p></div>
+      <div class="fstep reveal d1"><span class="st">STEP 1</span><div class="fig"><img src="assets/イラスト/生成/uketuke4.png" alt="ご予約"></div><h4>ご予約</h4><p>LINE・お電話で。事故状況も気軽にご相談ください。</p></div>
+      <div class="fstep reveal d1"><span class="st">STEP 2</span><div class="fig"><img src="assets/イラスト/生成/flow-counseling.png" alt="受付・カウンセリング"></div><h4>受付・カウンセリング</h4><p>事故の状況やお体の状態を詳しくお伺いします。</p></div>
+      <div class="fstep reveal d2"><span class="st">STEP 3</span><div class="fig"><img src="assets/イラスト/生成/flow-kensa.png" alt="検査・説明"></div><h4>検査・説明</h4><p>痛みの原因を検査し、施術方針を分かりやすくご説明。</p></div>
+      <div class="fstep reveal d2"><span class="st">STEP 4</span><div class="fig"><img src="assets/イラスト/生成/flow-sejutsu.png" alt="施術"></div><h4>施術</h4><p>国家資格者がお一人おひとりに合わせて丁寧に施術。</p></div>
+      <div class="fstep reveal d3"><span class="st">STEP 5</span><div class="fig"><img src="assets/イラスト/生成/natumi1.png" alt="通院サポート"></div><h4>通院サポート</h4><p>保険会社への連絡や通院の不安もしっかりサポート。</p></div>
     </div>
   </div>
 </section>
@@ -204,8 +229,8 @@
     <div class="staff-grid">
       <div class="scard staff-real reveal left">
         <div class="ph-wrap">
-          <div class="sphoto"><img src="assets/photos/staff-iwai.jpg" alt="岩井 拓磨（写真）"></div>
-          <img class="schibi" src="assets/characters/generated/iwai3.png" alt="岩井 拓磨のキャラクター">
+          <div class="sphoto"><img src="assets/写真/staff-iwai.jpg" alt="岩井 拓磨（写真）"></div>
+          <img class="schibi" src="assets/イラスト/生成/iwai3.png" alt="岩井 拓磨のキャラクター">
         </div>
         <div class="sinfo">
           <div class="role">柔道整復師</div>
@@ -215,8 +240,8 @@
       </div>
       <div class="scard staff-real reveal right">
         <div class="ph-wrap">
-          <div class="sphoto"><img src="assets/photos/staff-murase.jpg" alt="村瀬 将之（写真）"></div>
-          <img class="schibi" src="assets/characters/generated/murase1.png" alt="村瀬 将之のキャラクター">
+          <div class="sphoto"><img src="assets/写真/staff-murase.jpg" alt="村瀬 将之（写真）"></div>
+          <img class="schibi" src="assets/イラスト/生成/murase1.png" alt="村瀬 将之のキャラクター">
         </div>
         <div class="sinfo">
           <div class="role">柔道整復師</div>
@@ -237,12 +262,12 @@
       <p>明るく清潔な院内で、キッズスペースも完備。お子様連れでも安心して通えます。</p>
     </div>
     <div class="gallery-grid">
-      <figure class="reveal d1"><div class="ph-img"><img src="assets/photos/scene-counseling.jpg" alt="ていねいなカウンセリング" loading="lazy"></div><figcaption>ていねいなカウンセリング</figcaption></figure>
-      <figure class="reveal d1"><div class="ph-img"><img src="assets/photos/clinic-waiting.jpg" alt="明るく清潔な待合スペース" loading="lazy"></div><figcaption>明るく清潔な待合スペース</figcaption></figure>
-      <figure class="reveal d1"><div class="ph-img"><img src="assets/photos/clinic-kids.jpg" alt="キッズスペース完備" loading="lazy"></div><figcaption>キッズスペース完備</figcaption></figure>
-      <figure class="reveal d2"><div class="ph-img"><img src="assets/photos/scene-treatment1.jpg" alt="国家資格者による施術" loading="lazy"></div><figcaption>国家資格者による施術</figcaption></figure>
-      <figure class="reveal d2"><div class="ph-img"><img src="assets/photos/scene-adjust.jpg" alt="骨格・骨盤の調整" loading="lazy"></div><figcaption>骨格・骨盤の調整</figcaption></figure>
-      <figure class="reveal d2"><div class="ph-img"><img src="assets/photos/scene-stretch.jpg" alt="可動域を広げるストレッチ" loading="lazy"></div><figcaption>可動域を広げるストレッチ</figcaption></figure>
+      <figure class="reveal d1"><div class="ph-img"><img src="assets/写真/scene-counseling.jpg" alt="ていねいなカウンセリング" loading="lazy"></div><figcaption>ていねいなカウンセリング</figcaption></figure>
+      <figure class="reveal d1"><div class="ph-img"><img src="assets/写真/clinic-waiting.jpg" alt="明るく清潔な待合スペース" loading="lazy"></div><figcaption>明るく清潔な待合スペース</figcaption></figure>
+      <figure class="reveal d1"><div class="ph-img"><img src="assets/写真/clinic-kids.jpg" alt="キッズスペース完備" loading="lazy"></div><figcaption>キッズスペース完備</figcaption></figure>
+      <figure class="reveal d2"><div class="ph-img"><img src="assets/写真/scene-treatment1.jpg" alt="国家資格者による施術" loading="lazy"></div><figcaption>国家資格者による施術</figcaption></figure>
+      <figure class="reveal d2"><div class="ph-img"><img src="assets/写真/scene-adjust.jpg" alt="骨格・骨盤の調整" loading="lazy"></div><figcaption>骨格・骨盤の調整</figcaption></figure>
+      <figure class="reveal d2"><div class="ph-img"><img src="assets/写真/scene-stretch.jpg" alt="可動域を広げるストレッチ" loading="lazy"></div><figcaption>可動域を広げるストレッチ</figcaption></figure>
     </div>
   </div>
 </section>
@@ -349,7 +374,7 @@
       <h2><span class="hl">アクセス</span>・院情報</h2>
     </div>
     <figure class="ext-photo reveal zoom">
-      <img src="assets/photos/clinic-exterior.jpg" alt="BTG接骨院 小牧院の外観（プローグ小木II 1F・院前駐車場あり）" loading="lazy">
+      <img src="assets/写真/clinic-exterior.jpg" alt="BTG接骨院 小牧院の外観（プローグ小木II 1F・院前駐車場あり）" loading="lazy">
       <figcaption>院の外観 — この看板が目印です（院前に駐車場5台）</figcaption>
     </figure>
     <div class="access-grid">
@@ -386,10 +411,9 @@
     </div>
     <div class="sister-grid">
       <div class="sister-card red reveal left">
-        <a class="sister-banner" href="https://jiko-ichinomiya.com/" target="_blank" rel="noopener">
-          <img src="assets/photos/sister-iwakura.jpg" alt="いわくら肩甲骨骨盤接骨院（BTG千秋分院）" loading="lazy">
-          <span class="tap-hint">タップでサイトへ</span>
-        </a>
+        <div class="sister-banner">
+          <img src="assets/写真/sister-iwakura.jpg" alt="いわくら肩甲骨骨盤接骨院（BTG千秋分院）" loading="lazy">
+        </div>
         <div class="sister-info">
           <h3>いわくら肩甲骨骨盤接骨院</h3>
           <p>小牧駅より車で20分／岩倉駅より車で6分</p>
@@ -404,10 +428,9 @@
         </div>
       </div>
       <div class="sister-card green reveal right">
-        <a class="sister-banner" href="https://xn--3kqta9b416hwrik1a1mj94bg1ug82d.com/" target="_blank" rel="noopener">
-          <img src="assets/photos/sister-kasugai.jpg" alt="BTG整骨院 春日井本院" loading="lazy">
-          <span class="tap-hint">タップでサイトへ</span>
-        </a>
+        <div class="sister-banner">
+          <img src="assets/写真/sister-kasugai.jpg" alt="BTG整骨院 春日井本院" loading="lazy">
+        </div>
         <div class="sister-info">
           <h3>BTG整骨院 春日井院</h3>
           <p>JR春日井駅より車で15分／小牧駅より車で15分</p>
@@ -428,7 +451,7 @@
 <!-- ============ 最終CTA ============ -->
 <section class="final">
   <div class="wrap">
-    <img class="final-char" src="assets/characters/generated/uketuke2.png" alt="ご来院お待ちしております">
+    <img class="final-char" src="assets/イラスト/生成/uketuke2.png" alt="ご来院お待ちしております">
     <h2>そのつらい痛み、<br>我慢しないでご相談ください</h2>
     <p>交通事故・むち打ちのことなら、BTG接骨院 小牧院へ。<br>LINE・お電話で、無料相談を受け付けています。</p>
     <div class="hero-cta">
@@ -446,7 +469,7 @@
         <p>〒485-0058 愛知県小牧市小木1丁目112 プローグ小木II 1F<br>TEL 0568-90-1841</p>
       </div>
       <div>
-        <p><a href="#worry">こんなお悩み</a>　<a href="#reasons">選ばれる理由</a>　<a href="#flow">施術の流れ</a></p>
+        <p><a href="#worry">こんなお悩み</a>　<a href="#symptoms">症状別ページ</a>　<a href="#reasons">選ばれる理由</a>　<a href="#flow">施術の流れ</a></p>
         <p><a href="#staff">スタッフ紹介</a>　<a href="#sim">慰謝料計算</a>　<a href="#access">アクセス</a>　<a href="#sisters">系列院</a></p>
       </div>
     </div>
