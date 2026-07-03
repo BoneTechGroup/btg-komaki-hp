@@ -101,8 +101,12 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);
 /* ヒーロー右: 実写カード＋バッジ＋キャラ */
 .hero-media{position:relative;z-index:2}
 .hero-photo{border-radius:26px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3;
-  border:6px solid #fff;transform:rotate(-1.5deg)}
+  border:6px solid #fff;transform:rotate(-1.5deg);position:relative}
 .hero-photo img{width:100%;height:100%;object-fit:cover}
+/* ヒーロー写真スライドショー(クロスフェード) */
+.hero-photo .slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
+.hero-photo .slide.active{opacity:1}
+@media (prefers-reduced-motion:reduce){.hero-photo .slide{transition:none}}
 .badge-0en{position:absolute;top:-26px;left:-22px;z-index:3;width:120px;height:120px;border-radius:50%;
   background:radial-gradient(circle at 35% 30%,#fff2,transparent),linear-gradient(135deg,var(--accent),var(--accent-deep));
   color:#fff;display:grid;place-items:center;text-align:center;box-shadow:var(--shadow);

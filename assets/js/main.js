@@ -34,6 +34,21 @@ document.getElementById('burger')?.addEventListener('click', () => mnav.classLis
 document.getElementById('mclose')?.addEventListener('click', () => mnav.classList.remove('show'));
 mnav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mnav.classList.remove('show')));
 
+// ===== ヒーロー写真スライドショー(2秒ごとにクロスフェード) =====
+(() => {
+  const slider = document.getElementById('heroSlider');
+  if (!slider) return;
+  const slides = slider.querySelectorAll('.slide');
+  if (slides.length < 2) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let cur = 0;
+  setInterval(() => {
+    slides[cur].classList.remove('active');
+    cur = (cur + 1) % slides.length;
+    slides[cur].classList.add('active');
+  }, 2000);
+})();
+
 // ===== トップへ戻るボタン =====
 const totop = document.getElementById('totop');
 if (totop) {
