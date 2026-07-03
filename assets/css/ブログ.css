@@ -1,0 +1,96 @@
+/* ===================================================================
+   BTG接骨院 小牧院 — ブログ用スタイル
+   style.css + 症状ページ.css を読み込んだ上で追加適用
+   =================================================================== */
+
+/* ---- ブログ一覧 ---- */
+.blog-list{padding:56px 0 80px}
+.blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:960px;margin:0 auto}
+.bcard{background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);
+  border:1px solid #eef6f5;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.bcard:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.bcard .thumb{aspect-ratio:16/9;overflow:hidden}
+.bcard .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .45s}
+.bcard:hover .thumb img{transform:scale(1.06)}
+.bcard .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.bcard .date{font-size:.74rem;color:var(--ink-soft);font-weight:700}
+.bcard h3{font-size:1.02rem;font-weight:900;line-height:1.5}
+.bcard p{font-size:.84rem;color:var(--ink-soft)}
+.bcard .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.bcard .tag{background:var(--tiffany-pale);color:var(--tiffany-dark);font-weight:800;font-size:.7rem;
+  border-radius:999px;padding:3px 11px}
+.blog-coming{max-width:960px;margin:26px auto 0;text-align:center;color:var(--ink-soft);font-size:.86rem;
+  background:#fff;border:1.5px dashed var(--tiffany-light);border-radius:16px;padding:18px}
+
+/* ---- 記事本文 ---- */
+.article-hero{padding:34px 0 6px}
+.article-hero .meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px;
+  font-size:.78rem;color:var(--ink-soft);font-weight:700}
+.article-hero .meta .tag{background:var(--tiffany-pale);color:var(--tiffany-dark);font-weight:800;
+  border-radius:999px;padding:3px 12px}
+.article-hero h1{font-size:clamp(1.4rem,3.8vw,2rem);font-weight:900;line-height:1.5;max-width:860px}
+.article-eyecatch{max-width:860px;margin:22px auto 0;border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.article-eyecatch img{width:100%;display:block}
+
+.article{max-width:820px;margin:0 auto;padding:36px 22px 70px;font-size:.98rem;line-height:2}
+.article p{margin-bottom:1.2em}
+.article h2{font-size:1.35rem;font-weight:900;line-height:1.5;margin:2.2em 0 .9em;padding:12px 18px;
+  background:linear-gradient(90deg,var(--tiffany-pale),transparent);border-left:6px solid var(--tiffany);border-radius:6px}
+.article h3{font-size:1.08rem;font-weight:900;margin:1.8em 0 .7em;padding-bottom:6px;
+  border-bottom:2.5px solid var(--tiffany-light)}
+.article ul,.article ol{margin:0 0 1.2em 1.4em}
+.article li{margin-bottom:.4em}
+.article b{color:var(--tiffany-deep)}
+.article .em-red{color:var(--accent-deep);font-weight:800}
+.article img{border-radius:14px}
+
+/* 目次 */
+.toc{background:#fff;border:2px solid var(--tiffany-light);border-radius:16px;padding:20px 24px;margin:26px 0}
+.toc .ttl{font-weight:900;color:var(--tiffany-deep);margin-bottom:8px}
+.toc ol{margin:0 0 0 1.3em}
+.toc a{color:var(--ink);font-weight:700;text-decoration:underline;text-decoration-color:var(--tiffany-light)}
+.toc a:hover{color:var(--tiffany-deep)}
+
+/* 比較テーブル */
+.cmp-table{width:100%;border-collapse:collapse;margin:0 0 1.4em;font-size:.9rem;background:#fff;
+  border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.cmp-table th,.cmp-table td{padding:12px 14px;border:1px solid #e3f3f1;text-align:left;vertical-align:top}
+.cmp-table thead th{background:var(--tiffany);color:#fff;font-weight:900;text-align:center}
+.cmp-table tbody th{background:var(--tiffany-pale);color:var(--tiffany-dark);white-space:nowrap;width:26%}
+
+/* 記事内ハイライトボックス */
+.hl-box{background:var(--tiffany-pale);border-radius:16px;padding:20px 24px;margin:0 0 1.4em;
+  border:1px solid #cdeeeb}
+.hl-box .ttl{font-weight:900;color:var(--tiffany-deep);margin-bottom:6px}
+.hl-box p:last-child{margin-bottom:0}
+.warn-box{background:#fff7ef;border:1.5px solid #ffd9be;border-radius:16px;padding:20px 24px;margin:0 0 1.4em}
+.warn-box .ttl{font-weight:900;color:var(--accent-deep);margin-bottom:6px}
+.warn-box p:last-child{margin-bottom:0}
+
+/* 記事内CTA */
+.cta-inline{background:linear-gradient(135deg,var(--tiffany),var(--tiffany-deep));border-radius:20px;
+  padding:26px;text-align:center;color:#fff;margin:2em 0}
+.cta-inline .lead-s{font-weight:900;font-size:1.08rem;margin-bottom:14px}
+.cta-inline .hero-cta{justify-content:center}
+
+/* 記事末尾ボタン群 */
+.cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:1.5em 0}
+.cta-grid .btn{width:100%;font-size:.9rem;padding:14px 10px}
+.btn-outline{background:#fff;color:var(--tiffany-deep);border:2px solid var(--tiffany-light)}
+
+/* 店舗情報 */
+.shop-box{background:#fff;border-radius:20px;box-shadow:var(--shadow-sm);border:1px solid #eef6f5;
+  overflow:hidden;margin:2em 0}
+.shop-box .head{background:var(--tiffany);color:#fff;font-weight:900;padding:12px 20px}
+.shop-box .body{padding:20px}
+.shop-box table{width:100%;border-collapse:collapse;font-size:.9rem}
+.shop-box th,.shop-box td{padding:10px 12px;border-bottom:1px solid #eef6f5;text-align:left}
+.shop-box th{color:var(--tiffany-deep);white-space:nowrap;width:30%}
+
+@media (max-width:760px){
+  .blog-grid{grid-template-columns:1fr}
+  .cta-grid{grid-template-columns:1fr}
+  .article{font-size:.94rem}
+  .cmp-table{font-size:.8rem}
+  .cmp-table th,.cmp-table td{padding:9px 8px}
+}

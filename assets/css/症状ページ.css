@@ -97,18 +97,37 @@
 .summary-box h2{font-size:1.2rem;font-weight:900;color:var(--tiffany-deep);margin-bottom:12px}
 .summary-box p{font-size:.92rem;margin-bottom:10px}
 
-/* ---- 他の症状メニュー ---- */
+/* ---- 症状メニュー（大型タイル・サイトの主役） ---- */
 .sym-menu{padding:70px 0}
-.sym-menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:900px;margin:0 auto}
-.smitem{display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid #e3f3f1;border-radius:16px;
-  padding:14px 16px;font-weight:800;font-size:.9rem;transition:transform .22s,box-shadow .22s,border-color .22s}
-.smitem:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm);border-color:var(--tiffany)}
-.smitem .ic{width:48px;height:48px;flex:0 0 48px;border-radius:12px;background:#fff;
-  border:1px solid var(--tiffany-pale);display:flex;align-items:center;justify-content:center;overflow:hidden}
-.smitem .ic svg{width:30px;height:30px}
-.smitem .ic img{width:44px;height:44px;object-fit:contain}
+.sym-menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:980px;margin:0 auto}
+.smitem{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;
+  background:#fff;border:2px solid #e3f3f1;border-radius:22px;padding:28px 14px 20px;
+  font-weight:900;font-size:1.05rem;position:relative;overflow:hidden;
+  transition:transform .22s,box-shadow .22s,border-color .22s}
+.smitem::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;
+  background:linear-gradient(90deg,var(--tiffany),var(--tiffany-light));opacity:0;transition:opacity .22s}
+.smitem:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:var(--tiffany)}
+.smitem:hover::before{opacity:1}
+.smitem .ic{width:104px;height:104px;flex:none;border-radius:50%;
+  background:radial-gradient(circle at 30% 25%,#fff,var(--tiffany-pale));
+  border:2px solid #d9f1ef;display:flex;align-items:center;justify-content:center;overflow:hidden;
+  transition:transform .25s}
+.smitem:hover .ic{transform:scale(1.08)}
+.smitem .ic svg{width:64px;height:64px}
+.smitem .ic img{width:86px;height:86px;object-fit:contain}
+.smitem .lbl{line-height:1.4}
 .smitem.current{border-color:var(--tiffany);background:var(--tiffany-pale);pointer-events:none}
-.smitem .arrow{margin-left:auto;color:var(--tiffany);font-weight:900}
+.smitem .arrow{margin:2px 0 0;color:#fff;background:var(--tiffany);font-weight:800;font-size:.72rem;
+  padding:5px 14px;border-radius:999px;letter-spacing:.04em}
+.smitem.current .arrow{background:#b9dedd}
+
+/* ---- 主な症状ピル ---- */
+.sympill-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.sympill{background:var(--tiffany-pale);color:var(--tiffany-dark);font-weight:800;font-size:.82rem;
+  border:1px solid #cdeeeb;border-radius:999px;padding:7px 15px}
+
+/* ---- ケア4ステップ ---- */
+.care-steps4{grid-template-columns:repeat(4,1fr);max-width:1080px}
 
 /* ---- 症状SVGアイコン共通 ---- */
 .sym-svg .st{fill:none;stroke:var(--tiffany-deep);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
@@ -116,9 +135,16 @@
 .sym-svg .ac{fill:none;stroke:var(--accent);stroke-width:2.4;stroke-linecap:round}
 
 /* ---- レスポンシブ ---- */
+@media (max-width:1000px){
+  .care-steps4{grid-template-columns:1fr 1fr}
+}
 @media (max-width:860px){
   .care-steps{grid-template-columns:1fr}
-  .sym-menu-grid{grid-template-columns:1fr 1fr}
+  .care-steps4{grid-template-columns:1fr 1fr}
+  .sym-menu-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .smitem{padding:20px 10px 16px;font-size:.92rem}
+  .smitem .ic{width:80px;height:80px}
+  .smitem .ic img{width:66px;height:66px}
 }
 @media (max-width:640px){
   .sym-hero .inner{grid-template-columns:72px 1fr;gap:14px}
@@ -126,6 +152,6 @@
   .sym-icon svg{width:48px;height:48px}
   .sym-icon img{width:60px;height:60px}
   .check-card{padding:24px 18px}
-  .sym-menu-grid{grid-template-columns:1fr}
+  .care-steps4{grid-template-columns:1fr}
   .breadcrumb{font-size:.7rem}
 }
