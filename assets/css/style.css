@@ -103,8 +103,10 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);
 .hero-photo{border-radius:26px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3;
   border:6px solid #fff;transform:rotate(-1.5deg);position:relative}
 .hero-photo img{width:100%;height:100%;object-fit:cover}
-/* ヒーロー写真スライドショー(クロスフェード) */
+/* ヒーロー写真スライドショー(クロスフェード)
+   1枚目は通常配置で箱の高さを確保し、2枚目以降を重ねる(高さ0潰れ防止) */
 .hero-photo .slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
+.hero-photo .slide:first-child{position:relative;inset:auto;height:auto;display:block}
 .hero-photo .slide.active{opacity:1}
 @media (prefers-reduced-motion:reduce){.hero-photo .slide{transition:none}}
 .badge-0en{position:absolute;top:-26px;left:-22px;z-index:3;width:120px;height:120px;border-radius:50%;
