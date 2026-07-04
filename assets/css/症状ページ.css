@@ -121,6 +121,17 @@
   padding:5px 14px;border-radius:999px;letter-spacing:.04em}
 .smitem.current .arrow{background:#b9dedd}
 
+/* ---- 「まずは小牧院へ」CTAコールアウト ---- */
+.cta-callout{max-width:860px;margin:34px auto 0;background:linear-gradient(135deg,#fff7ef,#ffeadd);
+  border:2.5px solid var(--accent);border-radius:22px;padding:26px 28px;text-align:center;
+  box-shadow:0 12px 32px rgba(242,89,58,.14)}
+.cta-callout .cc-head{font-size:clamp(1.1rem,3.4vw,1.4rem);font-weight:900;color:var(--accent-deep);margin-bottom:10px}
+.cta-callout p{font-size:.92rem;color:var(--ink);margin-bottom:16px;text-align:left}
+.cta-callout p b{color:var(--accent-deep)}
+.cta-callout .cc-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.em-cta{color:var(--accent-deep);font-weight:900}
+@media (max-width:640px){.cta-callout{padding:20px 16px}.cta-callout .cc-btns .btn{width:100%}}
+
 /* ---- 事故の実例 ---- */
 .case-emoji{font-size:2.6rem;line-height:1}
 .case-emoji.big{font-size:3.4rem}

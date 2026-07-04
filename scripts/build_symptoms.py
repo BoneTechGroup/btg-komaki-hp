@@ -19,6 +19,16 @@ TEL = "0568-90-1841"
 TEL_LINK = "tel:0568901841"
 
 # ---------------------------------------------------------------- 共通部品
+CTA_CALLOUT = f"""
+    <div class="cta-callout reveal zoom">
+      <div class="cc-head">＼ 迷ったら、まずは小牧院に電話1本 ／</div>
+      <p>「病院？接骨院？何から始めれば…」の段階で大丈夫です。<b>交通事故治療専門アドバイザー</b>が、あなたの症状と状況で<b>いま最初にやるべきこと</b>を無料でご案内します。検査が必要なら<b>提携医療機関への紹介状</b>を作成、保険や慰謝料でもめそうなら<b>提携弁護士</b>におつなぎ。<b>窓口はぜんぶ小牧院ひとつ</b>で済みます。</p>
+      <div class="cc-btns">
+        <a class="btn btn-tel btn-lg" href="{TEL_LINK}">{TEL}<span class="sub">タップで電話（夜20時まで受付）</span></a>
+        <a class="btn btn-line btn-lg" href="{LINE_URL}" target="_blank" rel="noopener">LINEで無料相談<span class="sub">24時間受付・文章でもOK</span></a>
+      </div>
+    </div>"""
+
 POINTS = """
       <span class="pt">自賠責保険で窓口負担<em>0円</em></span>
       <span class="pt">お見舞金制度<em>最大2万円</em></span>
@@ -644,6 +654,7 @@ def render(p):
       </ul>
       <p class="check-note">ひとつでも当てはまったら、我慢せずにご相談ください。</p>
     </div>
+{CTA_CALLOUT}
   </div>
 </section>
 
@@ -662,8 +673,8 @@ def render(p):
       <figcaption>{p["photocap"]}</figcaption>
     </figure>
     <div class="md-note reveal">
-      <div class="ttl">⚠ こんなときはまず医療機関へ</div>
-      <p>手足に力が入らない、しびれや痛みがどんどん強くなる、意識のもうろうとした感じや強い息苦しさがある——そのような場合は、まず病院・整形外科での検査を受けてください。検査先にお困りの場合は当院から<b>提携医療機関への紹介状</b>を作成できます。病院との<b>併用通院</b>も可能です。</p>
+      <div class="ttl">⚠ 強い症状があるときは医療機関での検査を（病院探しも小牧院へ）</div>
+      <p>手足に力が入らない、しびれや痛みがどんどん強くなる、意識のもうろうとした感じや強い息苦しさがある——そのような場合は病院・整形外科での検査が必要です。<span class="em-cta">「どの病院に行けばいいか分からない」なら、先に小牧院へお電話ください。</span>提携医療機関をご紹介し、<b>紹介状を作成</b>します。検査後の<b>併用通院</b>までまとめてご案内できるので、あちこち調べ回る必要はありません。</p>
     </div>
   </div>
 </section>
@@ -728,6 +739,7 @@ def render(p):
     <div class="faq-list">
 {faq_html}
     </div>
+{CTA_CALLOUT}
   </div>
 </section>
 
@@ -736,6 +748,7 @@ def render(p):
     <div class="summary-box reveal zoom">
       <h2>まとめ｜{p["label"]}は「早めの一歩」が回復への近道</h2>
 {summary}
+      <p style="margin-top:14px"><span class="em-cta">このページを閉じる前に、LINEで「{p["label"]}がつらい」と一言送ってみてください。</span>アドバイザーから、あなた専用の「次にやること」が返ってきます。相談は無料、しつこい営業は一切ありません。</p>
     </div>
   </div>
 </section>
