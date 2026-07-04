@@ -132,6 +132,24 @@
 .em-cta{color:var(--accent-deep);font-weight:900}
 @media (max-width:640px){.cta-callout{padding:20px 16px}.cta-callout .cc-btns .btn{width:100%}}
 
+/* ---- CTAコールアウトのキャラクター ---- */
+.cta-callout{position:relative}
+.cta-callout .cc-char{position:absolute;right:-6px;top:-58px;width:104px;pointer-events:none;
+  filter:drop-shadow(0 8px 12px rgba(0,0,0,.14));animation:floaty 4s ease-in-out infinite}
+.cta-callout .cc-head,.cta-callout p{position:relative;z-index:1}
+@media (max-width:640px){.cta-callout .cc-char{width:72px;top:-44px;right:2px}}
+
+/* ---- 解説イラスト（メカニズム・シーン） ---- */
+.exp-img{max-width:680px;margin:0 auto 30px}
+.exp-img img{width:100%;border-radius:20px;box-shadow:var(--shadow-sm);border:1px solid #eef6f5}
+.exp-img figcaption{text-align:center;font-size:.8rem;color:var(--ink-soft);margin-top:8px;font-weight:700}
+
+/* ---- まとめボックスのキャラ添え ---- */
+.summary-box{position:relative}
+.summary-box .sm-char{position:absolute;right:14px;top:-64px;width:96px;pointer-events:none;
+  filter:drop-shadow(0 8px 12px rgba(0,0,0,.14))}
+@media (max-width:640px){.summary-box .sm-char{width:68px;top:-48px}}
+
 /* ---- 事故の実例 ---- */
 .case-emoji{font-size:2.6rem;line-height:1}
 .case-emoji.big{font-size:3.4rem}
