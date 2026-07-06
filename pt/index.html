@@ -106,8 +106,80 @@
   </div>
 </section>
 
+<!-- ============ COMO FUNCIONA O SISTEMA JAPONÊS ============ -->
+<section class="cause" id="system">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">BOM SABER</span>
+      <h2>Sofreu um acidente no Japão?<br>Veja por que vale a pena <span class="hl">ir a um sekkotsuin</span></h2>
+      <p>O sistema japonês é generoso com a vítima — mas só se você conhecer as regras. Dois minutos de leitura aqui podem valer centenas de milhares de ienes.</p>
+    </div>
+    <div class="cause-grid">
+      <div class="ccard reveal d1"><span class="cnum">1</span>
+        <h3>Por que é ¥0? — O seguro "Jibaiseki"</h3>
+        <p>Todo carro no Japão é obrigado a ter o seguro de responsabilidade (<b>Jibaiseki</b>). Ele existe para pagar a recuperação <b>da vítima</b>. Ou seja: quem paga o seu tratamento aqui é o seguro — não você. Por isso o custo é ¥0.</p></div>
+      <div class="ccard reveal d1"><span class="cnum">2</span>
+        <h3>Você ainda RECEBE dinheiro — a "isharyō"</h3>
+        <p>O Japão paga à vítima uma indenização (<b>isharyō</b>) pelo sofrimento e pelas idas ao tratamento: cerca de <b>¥8.600 por dia de visita</b> pelo padrão Jibaiseki (4.300 × 2 × dias de visita, limitado pelo período de tratamento). Frequentar direitinho = ser indenizado direitinho.</p></div>
+      <div class="ccard reveal d2"><span class="cnum">3</span>
+        <h3>Hospital ou sekkotsuin — por que nós?</h3>
+        <p>O hospital faz exames e papelada, mas a consulta é curta e muitas vezes sai só com analgésico e adesivo. O <b>sekkotsuin</b> faz a terapia manual contínua do whiplash — a lesão que o raio-X não mostra — com horário à noite e nos feriados. E a cobertura ¥0 do seguro é a mesma.</p></div>
+      <div class="ccard reveal d2"><span class="cnum">4</span>
+        <h3>Então: fale com a gente PRIMEIRO</h3>
+        <p>Antes de escolher hospital, antes de ligar para a seguradora — manda mensagem. Explicamos todo o fluxo no seu idioma e te guiamos passo a passo, incluindo a <b>indicação de hospital parceiro de confiança</b>. Você nunca vai ficar perdido.</p></div>
+    </div>
+
+    <!-- Calculadora de indenização -->
+    <div class="sim reveal zoom" style="margin-top:34px">
+      <div class="sim-head">
+        <h3>🧮 Calculadora de indenização</h3>
+        <p>Estime a sua isharyō (padrão Jibaiseki). Mexa nos controles — o valor atualiza na hora.</p>
+      </div>
+      <div class="sim-body">
+        <div>
+          <div class="sim-field">
+            <label>Período de tratamento (dias)<span class="hint"> — do acidente até a última visita</span></label>
+            <div class="sim-input">
+              <input type="range" id="csTotal" min="1" max="180" value="90">
+              <span class="sim-num"><input type="number" id="csTotalN" min="1" max="180" value="90">d</span>
+            </div>
+          </div>
+          <div class="sim-field">
+            <label>Dias em que você realmente foi<span class="hint"> — número de visitas</span></label>
+            <div class="sim-input">
+              <input type="range" id="csVisit" min="1" max="120" value="40">
+              <span class="sim-num"><input type="number" id="csVisitN" min="1" max="120" value="40">d</span>
+            </div>
+          </div>
+        </div>
+        <div class="sim-result">
+          <div class="lbl">Indenização estimada que você pode receber</div>
+          <div class="val"><span id="csYen">0</span><small> ienes</small></div>
+          <div class="calc" id="csCalc"></div>
+        </div>
+      </div>
+      <p class="sim-note">* Estimativa aproximada pelo padrão Jibaiseki (¥4.300/dia). Cálculo: ¥4.300 × o menor entre (dias de visita × 2) e (período de tratamento). O valor real varia caso a caso; outros padrões (seguradora / advogado) podem ser diferentes. Peça uma estimativa personalizada pelo LINE — é grátis.</p>
+    </div>
+    <script>
+    (function(){
+      var t=document.getElementById('csTotal'),tN=document.getElementById('csTotalN'),
+          v=document.getElementById('csVisit'),vN=document.getElementById('csVisitN'),
+          y=document.getElementById('csYen'),c=document.getElementById('csCalc');
+      function calc(){
+        var T=Math.max(1,Math.min(180,+t.value||1)),V=Math.max(1,Math.min(120,+v.value||1));
+        var target=Math.min(V*2,T),yen=target*4300;
+        y.textContent=yen.toLocaleString('pt-BR');
+        c.innerHTML='¥4.300 × <b>'+target+' dias</b> (o menor entre '+V+'×2='+(V*2)+' e o período de '+T+')';
+      }
+      function sync(a,b){a.addEventListener('input',function(){b.value=a.value;calc();});}
+      sync(t,tN);sync(tN,t);sync(v,vN);sync(vN,v);calc();
+    })();
+    </script>
+  </div>
+</section>
+
 <!-- ============ POR QUE NÓS ============ -->
-<section class="cause" id="why">
+<section class="cause" id="why" style="background:var(--mint)">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="en">POR QUE NOS ESCOLHER</span>
@@ -160,9 +232,9 @@
     <ol>
       <li class="reveal d1"><h3>Chame a polícia (110)</h3><p>Sempre registre, mesmo em acidente pequeno — sem registro policial, não tem seguro. Está nervoso? Manda mensagem no LINE que a gente te orienta na hora.</p></li>
       <li class="reveal d1"><h3>Registre tudo</h3><p>Fotos dos carros e do local, nome do outro motorista, telefone, placa e seguradora.</p></li>
-      <li class="reveal d2"><h3>Passe num médico (em até 14 dias)</h3><p>Pegue o atestado médico (shindansho) — é a prova da sua lesão. Podemos indicar um hospital parceiro e preparar a carta de encaminhamento.</p></li>
-      <li class="reveal d2"><h3>Avise a seguradora onde vai se tratar</h3><p>Quem escolhe a clínica é você — basta dizer "BTG Sekkotsuin Komaki". A gente te ensina exatamente o que falar.</p></li>
-      <li class="reveal d3"><h3>Comece o tratamento com a gente</h3><p>A terapia começa no mesmo dia. Dúvidas de seguro, indenização, advogado — uma porta só para tudo: a nossa.</p></li>
+      <li class="reveal d2"><h3>Venha falar com a gente PRIMEIRO — antes do hospital</h3><p><span class="em-cta">Antes de qualquer coisa, mande mensagem ou apareça aqui.</span> Explicamos como funciona todo o sistema japonês de acidentes (seguro, indenização, o que dizer para quem), avaliamos o seu estado e <b>indicamos um hospital parceiro de confiança</b>, já com a carta de encaminhamento. Nada de escolher hospital no chute.</p></li>
+      <li class="reveal d2"><h3>Pegue o atestado médico (em até 14 dias)</h3><p>No hospital que indicamos, pegue o atestado (shindansho) — a prova oficial da sua lesão. Sem ele o seguro não cobre, então não pule essa etapa.</p></li>
+      <li class="reveal d3"><h3>Avise a seguradora e comece o tratamento aqui</h3><p>Quem escolhe a clínica é você — basta dizer "BTG Sekkotsuin Komaki". A gente te ensina exatamente o que falar. A terapia começa no mesmo dia; seguro, indenização, advogado — uma porta só para tudo: a nossa.</p></li>
     </ol>
   </div>
 </section>

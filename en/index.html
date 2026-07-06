@@ -106,8 +106,80 @@
   </div>
 </section>
 
+<!-- ============ HOW JAPAN'S SYSTEM WORKS ============ -->
+<section class="cause" id="system">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">GOOD TO KNOW</span>
+      <h2>Had an accident in Japan?<br>Here's why you should <span class="hl">visit a sekkotsuin</span></h2>
+      <p>Japan's accident system is generous to victims — but only if you know the rules. Two minutes here could be worth hundreds of thousands of yen to you.</p>
+    </div>
+    <div class="cause-grid">
+      <div class="ccard reveal d1"><span class="cnum">1</span>
+        <h3>Why is it ¥0? — "Jibaiseki" insurance</h3>
+        <p>Every car in Japan must carry compulsory liability insurance (<b>Jibaiseki</b>). It exists to pay for the <b>victim's</b> recovery. So when you're injured in an accident, that insurance — not you — pays for your care here. That's why your cost is ¥0.</p></div>
+      <div class="ccard reveal d1"><span class="cnum">2</span>
+        <h3>You also RECEIVE money — "isharyō"</h3>
+        <p>Japan pays accident victims compensation (<b>isharyō</b>) for the pain of injury and hospital visits: roughly <b>¥8,600 per visit day</b> under the Jibaiseki standard (4,300 × 2 × your visit days, capped by your treatment period). Attending regularly = being compensated properly.</p></div>
+      <div class="ccard reveal d2"><span class="cnum">3</span>
+        <h3>Hospital vs sekkotsuin — why us?</h3>
+        <p>Hospitals do tests and paperwork, but visits are short and often just painkillers and compresses. A <b>sekkotsuin</b> gives hands-on therapy for whiplash — the injury X-rays can't see — with evening & holiday hours. Same ¥0 insurance coverage applies.</p></div>
+      <div class="ccard reveal d2"><span class="cnum">4</span>
+        <h3>So: come to us FIRST</h3>
+        <p>Before choosing a hospital, before calling the insurer — message us. We explain the whole flow in your language, then guide you through each step, including a <b>trusted partner hospital referral</b>. You'll never be lost.</p></div>
+    </div>
+
+    <!-- Compensation calculator -->
+    <div class="sim reveal zoom" style="margin-top:34px">
+      <div class="sim-head">
+        <h3>🧮 Compensation calculator</h3>
+        <p>Estimate your isharyō (Jibaiseki standard). Move the sliders — the amount updates instantly.</p>
+      </div>
+      <div class="sim-body">
+        <div>
+          <div class="sim-field">
+            <label>Treatment period (days)<span class="hint"> — from accident day to final visit</span></label>
+            <div class="sim-input">
+              <input type="range" id="csTotal" min="1" max="180" value="90">
+              <span class="sim-num"><input type="number" id="csTotalN" min="1" max="180" value="90">d</span>
+            </div>
+          </div>
+          <div class="sim-field">
+            <label>Days you actually visited<span class="hint"> — number of therapy visits</span></label>
+            <div class="sim-input">
+              <input type="range" id="csVisit" min="1" max="120" value="40">
+              <span class="sim-num"><input type="number" id="csVisitN" min="1" max="120" value="40">d</span>
+            </div>
+          </div>
+        </div>
+        <div class="sim-result">
+          <div class="lbl">Estimated compensation you could receive</div>
+          <div class="val"><span id="csYen">0</span><small> yen</small></div>
+          <div class="calc" id="csCalc"></div>
+        </div>
+      </div>
+      <p class="sim-note">* Rough estimate under the Jibaiseki standard (¥4,300/day). Calculated as ¥4,300 × the smaller of (visit days × 2) or (treatment period). Actual amounts vary by case; other standards (insurer / lawyer) can differ. Message us for a personal estimate — free.</p>
+    </div>
+    <script>
+    (function(){
+      var t=document.getElementById('csTotal'),tN=document.getElementById('csTotalN'),
+          v=document.getElementById('csVisit'),vN=document.getElementById('csVisitN'),
+          y=document.getElementById('csYen'),c=document.getElementById('csCalc');
+      function calc(){
+        var T=Math.max(1,Math.min(180,+t.value||1)),V=Math.max(1,Math.min(120,+v.value||1));
+        var target=Math.min(V*2,T),yen=target*4300;
+        y.textContent=yen.toLocaleString('en-US');
+        c.innerHTML='¥4,300 × <b>'+target+' days</b> (smaller of '+V+'×2='+(V*2)+' or period '+T+')';
+      }
+      function sync(a,b){a.addEventListener('input',function(){b.value=a.value;calc();});}
+      sync(t,tN);sync(tN,t);sync(v,vN);sync(vN,v);calc();
+    })();
+    </script>
+  </div>
+</section>
+
 <!-- ============ WHY US ============ -->
-<section class="cause" id="why">
+<section class="cause" id="why" style="background:var(--mint)">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="en">WHY CHOOSE US</span>
@@ -160,9 +232,9 @@
     <ol>
       <li class="reveal d1"><h3>Call the police (110)</h3><p>Always report, even for small accidents — no police report means no insurance. Panicking? Message us on LINE and we'll walk you through it.</p></li>
       <li class="reveal d1"><h3>Record everything</h3><p>Photos of the cars and scene, the other driver's name, phone, plate number and insurance company.</p></li>
-      <li class="reveal d2"><h3>See a doctor (within 14 days)</h3><p>Get a medical certificate (shindansho) — it's your proof of injury. We can refer you to a partner hospital and prepare a referral letter.</p></li>
-      <li class="reveal d2"><h3>Tell the insurance company where you'll be treated</h3><p>You choose your clinic — just say "BTG Sekkotsuin Komaki". We'll coach you on exactly what to say.</p></li>
-      <li class="reveal d3"><h3>Start your care with us</h3><p>Therapy starts the same day. Insurance questions, compensation, lawyers — one window for everything: us.</p></li>
+      <li class="reveal d2"><h3>Come to US first — before the hospital</h3><p><span class="em-cta">Message or visit us before anything else.</span> We'll explain how the whole Japanese accident system works (insurance, compensation, what to say to whom), check your condition, and <b>refer you to a trusted partner hospital</b> with a referral letter. No guessing which hospital to pick.</p></li>
+      <li class="reveal d2"><h3>Get your medical certificate (within 14 days)</h3><p>At the hospital we referred, get the certificate (shindansho) — your official proof of injury. Without it, the insurance won't cover you, so don't skip this step.</p></li>
+      <li class="reveal d3"><h3>Tell the insurer & start your care with us</h3><p>You choose your clinic — just say "BTG Sekkotsuin Komaki". We'll coach you on exactly what to say. Therapy starts the same day; insurance, compensation, lawyers — one window for everything: us.</p></li>
     </ol>
   </div>
 </section>

@@ -106,8 +106,80 @@
   </div>
 </section>
 
+<!-- ============ 日本的交通事故制度 ============ -->
+<section class="cause" id="system">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">GOOD TO KNOW</span>
+      <h2>在日本遭遇交通事故？<br>先了解为什么应该<span class="hl">去接骨院</span></h2>
+      <p>日本的事故制度对受害者非常友好——前提是您了解规则。花两分钟读完这里，可能价值几十万日元。</p>
+    </div>
+    <div class="cause-grid">
+      <div class="ccard reveal d1"><span class="cnum">1</span>
+        <h3>为什么是0日元？——"自赔责"保险</h3>
+        <p>在日本，每辆车都必须投保强制责任保险（<b>自赔责保险</b>）。这份保险的目的就是支付<b>受害者</b>的康复费用。也就是说，替您支付调理费的是保险——不是您自己。这就是0日元的原因。</p></div>
+      <div class="ccard reveal d1"><span class="cnum">2</span>
+        <h3>您还能【领到】钱——"慰谢料"</h3>
+        <p>日本会向事故受害者支付赔偿金（<b>慰谢料</b>），补偿伤痛和往返调理的辛苦：按自赔责标准，每次来院日约<b>8,600日元</b>（4,300 × 2 × 实际来院天数，以治疗期间为上限）。坚持规律地来院＝拿到应得的赔偿。</p></div>
+      <div class="ccard reveal d2"><span class="cnum">3</span>
+        <h3>医院 vs 接骨院——为什么选我们？</h3>
+        <p>医院负责检查和开证明，但看诊时间短，常常只开止痛药和贴布。<b>接骨院</b>则提供持续的手法调理，专治X光拍不出来的挥鞭伤——而且晚间和节假日也营业。保险的0日元保障完全相同。</p></div>
+      <div class="ccard reveal d2"><span class="cnum">4</span>
+        <h3>所以：请先来找我们</h3>
+        <p>在选医院之前、在给保险公司打电话之前——先发一条消息。我们用您的语言讲清整个流程，一步步带着您走，还会<b>介绍值得信赖的合作医院</b>。您绝不会迷路。</p></div>
+    </div>
+
+    <!-- 赔偿金计算器 -->
+    <div class="sim reveal zoom" style="margin-top:34px">
+      <div class="sim-head">
+        <h3>🧮 赔偿金（慰谢料）计算器</h3>
+        <p>按自赔责标准估算您的慰谢料。拖动滑块——金额即时更新。</p>
+      </div>
+      <div class="sim-body">
+        <div>
+          <div class="sim-field">
+            <label>治疗期间（天数）<span class="hint">——从事故当天到最后一次来院</span></label>
+            <div class="sim-input">
+              <input type="range" id="csTotal" min="1" max="180" value="90">
+              <span class="sim-num"><input type="number" id="csTotalN" min="1" max="180" value="90">天</span>
+            </div>
+          </div>
+          <div class="sim-field">
+            <label>实际来院天数<span class="hint">——接受调理的次数</span></label>
+            <div class="sim-input">
+              <input type="range" id="csVisit" min="1" max="120" value="40">
+              <span class="sim-num"><input type="number" id="csVisitN" min="1" max="120" value="40">天</span>
+            </div>
+          </div>
+        </div>
+        <div class="sim-result">
+          <div class="lbl">您预计可获得的赔偿金</div>
+          <div class="val"><span id="csYen">0</span><small> 日元</small></div>
+          <div class="calc" id="csCalc"></div>
+        </div>
+      </div>
+      <p class="sim-note">* 按自赔责标准（每天4,300日元）的大致估算。计算方式：4,300日元 ×（实际来院天数×2）与（治疗期间天数）中较小的一方。实际金额因个案而异；保险公司标准、律师标准的金额也可能不同。想要个人化估算，请通过LINE咨询——免费。</p>
+    </div>
+    <script>
+    (function(){
+      var t=document.getElementById('csTotal'),tN=document.getElementById('csTotalN'),
+          v=document.getElementById('csVisit'),vN=document.getElementById('csVisitN'),
+          y=document.getElementById('csYen'),c=document.getElementById('csCalc');
+      function calc(){
+        var T=Math.max(1,Math.min(180,+t.value||1)),V=Math.max(1,Math.min(120,+v.value||1));
+        var target=Math.min(V*2,T),yen=target*4300;
+        y.textContent=yen.toLocaleString('zh-CN');
+        c.innerHTML='4,300日元 × <b>'+target+'天</b>（取 '+V+'×2='+(V*2)+' 与治疗期间 '+T+' 中较小者）';
+      }
+      function sync(a,b){a.addEventListener('input',function(){b.value=a.value;calc();});}
+      sync(t,tN);sync(tN,t);sync(v,vN);sync(vN,v);calc();
+    })();
+    </script>
+  </div>
+</section>
+
 <!-- ============ 选择理由 ============ -->
-<section class="cause" id="why">
+<section class="cause" id="why" style="background:var(--mint)">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="en">WHY CHOOSE US</span>
@@ -160,9 +232,9 @@
     <ol>
       <li class="reveal d1"><h3>报警（拨打110）</h3><p>再小的事故也要报警——没有警方记录就无法使用保险。慌了神？用LINE发消息，我们一步步教您。</p></li>
       <li class="reveal d1"><h3>记录现场</h3><p>拍下车辆和现场的照片，记录对方的姓名、电话、车牌号和保险公司。</p></li>
-      <li class="reveal d2"><h3>就医（14天以内）</h3><p>请医生开具诊断书——这是您受伤的证明。我们可以介绍合作医院并准备介绍信。</p></li>
-      <li class="reveal d2"><h3>告知保险公司您的调理地点</h3><p>去哪里调理由您自己决定——只需告诉对方"BTG接骨院 小牧院"。具体怎么说，我们教您。</p></li>
-      <li class="reveal d3"><h3>在本院开始调理</h3><p>当天即可开始。保险疑问、赔偿金、律师——所有事情一个窗口：找我们就行。</p></li>
+      <li class="reveal d2"><h3>先来找我们——比医院更优先</h3><p><span class="em-cta">在做任何事之前，先给我们发消息或直接来院。</span>我们会为您讲解日本交通事故的整套规则（保险、赔偿金、该对谁说什么），确认您的伤情，并<b>介绍值得信赖的合作医院</b>、写好介绍信。不用自己瞎猜该去哪家医院。</p></li>
+      <li class="reveal d2"><h3>取得诊断书（14天以内）</h3><p>在我们介绍的医院取得诊断书（shindansho）——这是您受伤的官方证明。没有它保险不予受理，千万不要跳过这一步。</p></li>
+      <li class="reveal d3"><h3>告知保险公司，并在本院开始调理</h3><p>去哪里调理由您决定——只需告诉对方"BTG接骨院 小牧院"，具体怎么说我们教您。调理当天即可开始；保险、赔偿金、律师——所有事情一个窗口：找我们就行。</p></li>
     </ol>
   </div>
 </section>
