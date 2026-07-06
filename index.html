@@ -31,7 +31,7 @@
   <div class="wrap hbar">
     <a href="#top" class="logo">
       <span class="mark">BTG</span>
-      <span>BTG接骨院 小牧院<small>交通事故・むち打ち専門</small></span>
+      <span>BTG接骨院 小牧院<small>交通事故・むち打ち専門サイト</small></span>
     </a>
     <nav class="hnav">
       <a class="navlink" href="#symptoms">症状ページ</a>
@@ -150,6 +150,64 @@
         <p>交通事故によるケガの施術は<b>自賠責保険が適用</b>されるため、被害者の方の施術費用は原則<b>0円</b>。安心して必要な施術に専念いただけます。お見舞金制度（最大2万円）もご用意しています。</p>
       </div>
       <img src="assets/イラスト/生成/iwai2.png" alt="費用について説明するスタッフ">
+    </div>
+  </div>
+</section>
+
+<!-- ============ 料金/慰謝料 + シミュレーター ============ -->
+<section class="fee" id="sim">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="en">COST &amp; SIMULATOR</span>
+      <h2>費用と<span class="hl">慰謝料</span>について</h2>
+      <p>交通事故の施術は自賠責保険の対象。費用面もご安心ください。</p>
+    </div>
+    <div class="fee-grid">
+      <div class="fee-box reveal left">
+        <h3>施術費用</h3>
+        <div class="amt">0<small>円（窓口負担）</small></div>
+        <p>自賠責保険が適用されるため、被害者の方の窓口でのお支払いは原則ありません。</p>
+      </div>
+      <div class="fee-box reveal right">
+        <h3>通院慰謝料の目安</h3>
+        <div class="amt">8,600<small>円 / 1日</small></div>
+        <div class="formula">4,300円 × 2 × 実通院日数</div>
+        <p>自賠責基準では「4,300円 × 2 × 実通院日数」で計算するため、通院1日あたり実質<b>8,600円</b>が目安です。（通院期間の日数を上限とする条件があります）</p>
+      </div>
+    </div>
+
+    <!-- 慰謝料計算シミュレーター -->
+    <div class="sim reveal zoom">
+      <div class="sim-head">
+        <h3>🧮 慰謝料 かんたん計算シミュレーター</h3>
+        <p>自賠責基準で、受け取れる通院慰謝料の目安をその場で計算できます。</p>
+      </div>
+      <div class="sim-body">
+        <div>
+          <div class="sim-field">
+            <label>通院期間（日数）<span class="hint">／事故日〜通院終了までの日数</span></label>
+            <div class="sim-input">
+              <input type="range" id="simTotal" min="1" max="180" value="90">
+              <span class="sim-num"><input type="number" id="simTotalN" min="1" max="180" value="90">日</span>
+            </div>
+          </div>
+          <div class="sim-field">
+            <label>実際に通院した日数<span class="hint">／実際に施術を受けた回数</span></label>
+            <div class="sim-input">
+              <input type="range" id="simVisit" min="1" max="120" value="40">
+              <span class="sim-num"><input type="number" id="simVisitN" min="1" max="120" value="40">日</span>
+            </div>
+          </div>
+        </div>
+        <div class="sim-result">
+          <div class="lbl">受け取れる通院慰謝料の目安</div>
+          <div class="val"><span id="simYen">0</span><small> 円</small></div>
+          <div class="calc" id="simCalc"></div>
+        </div>
+      </div>
+      <p class="sim-note">
+        ※ 本シミュレーターは自賠責基準（1日4,300円）に基づく<b>概算の目安</b>です。実際の金額は「実通院日数×2」と「通院期間の日数」の少ない方に4,300円を掛けて算出され、症状や状況により異なります。任意保険基準・弁護士基準では金額が変わる場合があります。正確な金額は当院までお気軽にご相談ください。
+      </p>
     </div>
   </div>
 </section>
@@ -310,64 +368,6 @@
     </div>
     <div class="reveal d3" style="text-align:center;margin-top:32px">
       <a class="btn btn-ghost btn-lg" href="院の雰囲気.html">院内写真をもっと見る<span class="sub">施術の様子・設備を写真でご紹介 →</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 料金/慰謝料 + シミュレーター ============ -->
-<section class="fee" id="sim">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="en">COST &amp; SIMULATOR</span>
-      <h2>費用と<span class="hl">慰謝料</span>について</h2>
-      <p>交通事故の施術は自賠責保険の対象。費用面もご安心ください。</p>
-    </div>
-    <div class="fee-grid">
-      <div class="fee-box reveal left">
-        <h3>施術費用</h3>
-        <div class="amt">0<small>円（窓口負担）</small></div>
-        <p>自賠責保険が適用されるため、被害者の方の窓口でのお支払いは原則ありません。</p>
-      </div>
-      <div class="fee-box reveal right">
-        <h3>通院慰謝料の目安</h3>
-        <div class="amt">8,600<small>円 / 1日</small></div>
-        <div class="formula">4,300円 × 2 × 実通院日数</div>
-        <p>自賠責基準では「4,300円 × 2 × 実通院日数」で計算するため、通院1日あたり実質<b>8,600円</b>が目安です。（通院期間の日数を上限とする条件があります）</p>
-      </div>
-    </div>
-
-    <!-- 慰謝料計算シミュレーター -->
-    <div class="sim reveal zoom">
-      <div class="sim-head">
-        <h3>🧮 慰謝料 かんたん計算シミュレーター</h3>
-        <p>自賠責基準で、受け取れる通院慰謝料の目安をその場で計算できます。</p>
-      </div>
-      <div class="sim-body">
-        <div>
-          <div class="sim-field">
-            <label>通院期間（日数）<span class="hint">／事故日〜通院終了までの日数</span></label>
-            <div class="sim-input">
-              <input type="range" id="simTotal" min="1" max="180" value="90">
-              <span class="sim-num"><input type="number" id="simTotalN" min="1" max="180" value="90">日</span>
-            </div>
-          </div>
-          <div class="sim-field">
-            <label>実際に通院した日数<span class="hint">／実際に施術を受けた回数</span></label>
-            <div class="sim-input">
-              <input type="range" id="simVisit" min="1" max="120" value="40">
-              <span class="sim-num"><input type="number" id="simVisitN" min="1" max="120" value="40">日</span>
-            </div>
-          </div>
-        </div>
-        <div class="sim-result">
-          <div class="lbl">受け取れる通院慰謝料の目安</div>
-          <div class="val"><span id="simYen">0</span><small> 円</small></div>
-          <div class="calc" id="simCalc"></div>
-        </div>
-      </div>
-      <p class="sim-note">
-        ※ 本シミュレーターは自賠責基準（1日4,300円）に基づく<b>概算の目安</b>です。実際の金額は「実通院日数×2」と「通院期間の日数」の少ない方に4,300円を掛けて算出され、症状や状況により異なります。任意保険基準・弁護士基準では金額が変わる場合があります。正確な金額は当院までお気軽にご相談ください。
-      </p>
     </div>
   </div>
 </section>
