@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<style>
+  /* ============================================
+     事故ブログ アイキャッチテンプレ (1200x630)
+     使い方: URLパラメータで差し替え
+       ?l1=1行目&l2=2行目&l3=3行目&char=uketuke1.png
+     ============================================ */
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --tiffany:#0abab5; --tiffany-deep:#0a8f8b; --tiffany-dark:#087f7b;
+    --tiffany-pale:#e6f7f6; --ink:#26333b;
+  }
+  body{width:1200px;height:630px;overflow:hidden;font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;position:relative;
+    background:
+      radial-gradient(circle at 88% 15%, rgba(10,186,181,.14), transparent 42%),
+      radial-gradient(circle at 8% 90%, rgba(10,186,181,.18), transparent 45%),
+      linear-gradient(135deg,#f4fbfa 0%, #e6f7f6 55%, #d8f2f0 100%);}
+  /* 装飾の丸 */
+  .deco{position:absolute;border-radius:50%;background:rgba(10,186,181,.09)}
+  .d1{width:340px;height:340px;right:-90px;top:-120px}
+  .d2{width:220px;height:220px;left:-70px;bottom:-70px;background:rgba(10,186,181,.12)}
+  .d3{width:90px;height:90px;right:330px;bottom:40px;background:rgba(10,186,181,.10)}
+  /* 上部帯 */
+  .band{position:absolute;top:0;left:0;right:0;height:14px;background:linear-gradient(90deg,var(--tiffany),var(--tiffany-deep))}
+  /* サイト名タグ */
+  .site{position:absolute;top:44px;left:60px;display:flex;align-items:center;gap:14px}
+  .site .mark{background:var(--tiffany);color:#fff;font-weight:900;font-size:26px;border-radius:14px;padding:10px 16px;letter-spacing:.5px}
+  .site .name{font-weight:900;color:var(--ink);font-size:26px}
+  .site .name small{display:block;font-size:15px;color:var(--tiffany-dark);font-weight:800;margin-top:2px}
+  /* タイトル */
+  .title{position:absolute;left:60px;top:170px;width:760px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+  .title .line{background:rgba(255,255,255,.94);border-left:12px solid var(--tiffany);
+    box-shadow:0 6px 22px rgba(8,127,123,.13);border-radius:10px;
+    font-size:54px;font-weight:900;color:var(--ink);line-height:1.28;padding:10px 26px 12px;letter-spacing:.5px}
+  .title .line .em{color:var(--tiffany-deep)}
+  /* キャラ */
+  .chara{position:absolute;right:34px;bottom:0;height:470px}
+  .chara img{height:100%;display:block;filter:drop-shadow(0 8px 18px rgba(8,127,123,.18))}
+  /* 下部フッター帯 */
+  .foot{position:absolute;left:0;right:0;bottom:0;height:74px;background:linear-gradient(90deg,var(--tiffany),var(--tiffany-deep));
+    display:flex;align-items:center;padding:0 60px;color:#fff;font-weight:900;font-size:26px;letter-spacing:1px}
+  .foot .zero{background:#fff;color:var(--tiffany-deep);border-radius:999px;padding:4px 20px;margin-left:18px;font-size:24px}
+  .blogtag{position:absolute;top:52px;right:60px;background:var(--tiffany-deep);color:#fff;font-weight:900;
+    font-size:22px;border-radius:999px;padding:10px 26px;letter-spacing:2px}
+</style>
+</head>
+<body>
+<div class="band"></div>
+<div class="deco d1"></div><div class="deco d2"></div><div class="deco d3"></div>
+
+<div class="site">
+  <span class="mark">BTG</span>
+  <span class="name">BTG接骨院 小牧院<small>交通事故・むち打ち専門サイト</small></span>
+</div>
+<div class="blogtag">事故お役立ちブログ</div>
+
+<div class="title" id="title"></div>
+
+<div class="chara"><img id="chara" src="" alt=""></div>
+
+<div class="foot">小牧市の交通事故専門院<span class="zero">自賠責で窓口0円</span></div>
+
+<script>
+// URLパラメータ: l1,l2,l3 = タイトル行(最大3行) / char = キャラ画像ファイル名
+// 行内の【】で囲んだ部分はティファニー色で強調される
+const p = new URLSearchParams(location.search);
+const t = document.getElementById('title');
+['l1','l2','l3'].forEach(k => {
+  const v = p.get(k);
+  if (!v) return;
+  const div = document.createElement('div');
+  div.className = 'line';
+  div.innerHTML = v.replace(/【([^】]*)】/g, '<span class="em">$1</span>');
+  t.appendChild(div);
+});
+document.getElementById('chara').src = '../../assets/イラスト/生成/' + (p.get('char') || 'uketuke1.png');
+</script>
+</body>
+</html>
