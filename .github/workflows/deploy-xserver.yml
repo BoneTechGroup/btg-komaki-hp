@@ -1,0 +1,38 @@
+name: Deploy to XServer
+
+# mainへのpushで自動デプロイ（手動実行も可）
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-xserver
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.XSERVER_FTP_HOST }}
+          username: ${{ secrets.XSERVER_FTP_USER }}
+          password: ${{ secrets.XSERVER_FTP_PASSWORD }}
+          protocol: ftps
+          server-dir: /sekkotsuin-komaki.com/public_html/jiko.sekkotsuin-komaki.com/
+          local-dir: ./
+          # /blog/(WordPress)はこのActionの管理外＝削除・上書きされない
+          # (state-fileに無いサーバー上のファイルは触らない仕様)
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            scripts/**
+            **/*.md
+            _headers
+            CNAME
+            .claude/**
