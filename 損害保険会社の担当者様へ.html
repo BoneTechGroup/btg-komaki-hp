@@ -12,6 +12,11 @@
 <meta property="og:locale" content="ja_JP">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/症状ページ.css">
+<style>
+/* 6つの柱を上3・下3で揃える(このページ専用) */
+.cause-grid{grid-template-columns:repeat(3,1fr)}
+@media (max-width:900px){.cause-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 <div class="progress" id="progress"></div>
